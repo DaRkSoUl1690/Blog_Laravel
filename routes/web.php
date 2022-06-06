@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\HtmlFormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +22,7 @@ Route::get('/', function () {
 
 // Route::view("users","users");
  
-
-
 // Route::view("user","users");
+
+Route::post("users",[HtmlFormController::class,'getData']);
+Route::view("login","formUsers");
