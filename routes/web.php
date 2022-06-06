@@ -17,12 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("users/{user}",[UsersController::class,'loadView']);
+// Route::get("users/{user}",[UsersController::class,'loadView']);
 
-// Route::get('/user/{name}', function ($name) {
-//     return view('users',["name"=>$name]);
-// });
-
+Route::view("users","users");
+ 
 
 
 // Route::view("user","users");

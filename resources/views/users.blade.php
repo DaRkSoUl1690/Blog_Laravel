@@ -1,1 +1,2 @@
-<h1>Hello World {{$user}}</h1>
+<x-header componentName = "Users"/>
+<h1>Hello World !!</h1>
