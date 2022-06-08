@@ -24,5 +24,7 @@ Route::get('/', function () {
  
 // Route::view("user","users");
 
-Route::post("users",[HtmlFormController::class,'getData']);
-Route::view("login","formUsers");
+// Route::post("users",[HtmlFormController::class,'getData']);
+// Route::view("login","formUsers");
+
+Route::view("noaccess","test3");
