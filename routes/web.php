@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\demoController;
 use App\Http\Controllers\HtmlFormController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,12 +40,15 @@ Route::get('/', function () {
 // });
 
 /**
+ *
  * Route Middleware Tutorial Route
  */
 
-    Route::view("users","users");
-    Route::view("home","rMiddle1")->middleware('protectPage');
-    Route::view("noaccess","middle2");
+    // Route::view("users","users");
+    // Route::view("home","rMiddle1")->middleware('protectPage');
+    // Route::view("noaccess","middle2");
 
 
+
+Route::get("users",[demoController::class,'index']);
 
