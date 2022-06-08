@@ -20,11 +20,22 @@ Route::get('/', function () {
 
 // Route::get("users",[UsersController::class,'loadView']);
 
-// Route::view("users","users");
- 
+
 // Route::view("user","users");
 
 // Route::post("users",[HtmlFormController::class,'getData']);
 // Route::view("login","formUsers");
 
-Route::view("noaccess","test3");
+// Route::view("noaccess","test3");
+
+
+// Group Middleware Tutorial Route
+Route::view("home","home");
+Route::view("noaccess","noacess");
+
+Route::group(["middleware"=>['protectPage']],function(){
+    Route::view("users","users");
+
+});
+
+
