@@ -30,12 +30,20 @@ Route::get('/', function () {
 
 
 // Group Middleware Tutorial Route
-Route::view("home","home");
-Route::view("noaccess","noacess");
+// Route::view("home","home");
+// Route::view("noaccess","noacess");
 
-Route::group(["middleware"=>['protectPage']],function(){
+// Route::group(["middleware"=>['protectPage']],function(){
+//     Route::view("users","users");
+// });
+
+/**
+ * Route Middleware Tutorial Route
+ */
+
     Route::view("users","users");
+    Route::view("home","rMiddle1")->middleware('protectPage');
+    Route::view("noaccess","middle2");
 
-});
 
 
