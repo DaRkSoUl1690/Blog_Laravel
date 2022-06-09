@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\demoController;
 use App\Http\Controllers\HtmlFormController;
-
+use App\Http\Controllers\reqController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,5 +50,9 @@ Route::get('/', function () {
 
 
 
-Route::get("users",[demoController::class,'index']);
+// Route::get("users",[demoController::class,'index']);
+
+Route::get("users",[reqController::class,'testRequest']);
+Route::view("login","users");
+
 
