@@ -5,6 +5,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\demoController;
 use App\Http\Controllers\HtmlFormController;
 use App\Http\Controllers\reqController;
+use App\Http\Controllers\sessController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,15 +45,32 @@ Route::get('/', function () {
  * Route Middleware Tutorial Route
  */
 
-    // Route::view("users","users");
-    // Route::view("home","rMiddle1")->middleware('protectPage');
-    // Route::view("noaccess","middle2");
+// Route::view("users","users");
+// Route::view("home","rMiddle1")->middleware('protectPage');
+// Route::view("noaccess","middle2");
 
 
 
 // Route::get("users",[demoController::class,'index']);
 
-Route::get("users",[reqController::class,'testRequest']);
-Route::view("login","users");
+// Route::get("users",[reqController::class,'testRequest']);
+// Route::view("login","users");
+
+// Route::view("login","login");
+Route::view("profile", "profile");
+Route::get('/logout', function () {
+    if (session()->has('username')) {
+        session()->pull('username', null);
+    }
+    return redirect('login');
+});
+
+Route::get('/login', function () {
+    if (session()->has('username')) {
+        return redirect('profile');
+    }
+    return view('login');
+});
 
 
+Route::post("post", [sessController::class, 'userLogin']);
