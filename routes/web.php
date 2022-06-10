@@ -6,6 +6,7 @@ use App\Http\Controllers\demoController;
 use App\Http\Controllers\HtmlFormController;
 use App\Http\Controllers\reqController;
 use App\Http\Controllers\sessController;
+use App\Http\Controllers\storeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,20 +58,24 @@ Route::get('/', function () {
 // Route::view("login","users");
 
 // Route::view("login","login");
-Route::view("profile", "profile");
-Route::get('/logout', function () {
-    if (session()->has('username')) {
-        session()->pull('username', null);
-    }
-    return redirect('login');
-});
+// Route::view("profile", "profile");
+// Route::get('/logout', function () {
+//     if (session()->has('username')) {
+//         session()->pull('username', null);
+//     }
+//     return redirect('login');
+// });
 
-Route::get('/login', function () {
-    if (session()->has('username')) {
-        return redirect('profile');
-    }
-    return view('login');
-});
+// Route::get('/login', function () {
+//     if (session()->has('username')) {
+//         return redirect('profile');
+//     }
+//     return view('login');
+// });
 
 
-Route::post("post", [sessController::class, 'userLogin']);
+// Route::post("post", [sessController::class, 'userLogin']);
+
+
+Route::view('store' , 'storeUser');
+Route::post("storep", [storeController::class, 'store']);
