@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\dbController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\demoController;
@@ -7,7 +8,6 @@ use App\Http\Controllers\HtmlFormController;
 use App\Http\Controllers\reqController;
 use App\Http\Controllers\sessController;
 use App\Http\Controllers\storeController;
-use PharIo\Manifest\ApplicationName;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,7 +83,9 @@ Route::get('/', function () {
 // Route::post("storep", [storeController::class, 'store']);
 
 // Route::view('locali','locali');
-Route::get('/locali/{lang}', function ($lang) {
-    App::setlocale($lang);
-    return view('locali');
-});
+// Route::get('/locali/{lang}', function ($lang) {
+//     App::setlocale($lang);
+//     return view('locali');
+// });
+
+Route::get('dbs' , [dbController::class, 'index']);
