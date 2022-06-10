@@ -7,6 +7,8 @@ use App\Http\Controllers\HtmlFormController;
 use App\Http\Controllers\reqController;
 use App\Http\Controllers\sessController;
 use App\Http\Controllers\storeController;
+use PharIo\Manifest\ApplicationName;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -77,5 +79,11 @@ Route::get('/', function () {
 // Route::post("post", [sessController::class, 'userLogin']);
 
 
-Route::view('store' , 'storeUser');
-Route::post("storep", [storeController::class, 'store']);
+// Route::view('store' , 'storeUser');
+// Route::post("storep", [storeController::class, 'store']);
+
+// Route::view('locali','locali');
+Route::get('/locali/{lang}', function ($lang) {
+    App::setlocale($lang);
+    return view('locali');
+});
