@@ -5,9 +5,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\demoController;
 use App\Http\Controllers\HtmlFormController;
+use App\Http\Controllers\listController;
 use App\Http\Controllers\reqController;
 use App\Http\Controllers\sessController;
 use App\Http\Controllers\storeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -88,4 +90,7 @@ Route::get('/', function () {
 //     return view('locali');
 // });
 
-Route::get('dbs' , [dbController::class, 'index']);
+// Route::get('dbs' , [dbController::class, 'index']);
+
+
+Route :: get('list',[listController::class, 'list']);
