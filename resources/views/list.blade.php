@@ -15,3 +15,13 @@
 </tr>
    @endforeach
 </table>
+
+<div>
+    {{$users->links()}}
+</div>
+
+<style>
+    .w-5 {
+        display: none;
+    }
+</style>

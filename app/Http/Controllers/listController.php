@@ -8,8 +8,8 @@ class listController extends Controller
 {
     //
     function list(){
-        $data =  Users::all();
+        $data =  Users::paginate(5);
         return view('list',['users' => $data]);
-        
+
     }
 }
