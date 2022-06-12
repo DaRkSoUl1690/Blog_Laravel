@@ -101,3 +101,5 @@ Route::get('/', function () {
 
 Route :: get('list',[deleteMemberController::class, 'list']);
 Route :: get('delete/{id}',[deleteMemberController::class, 'delete']);
+Route :: get('edit/{id}',[deleteMemberController::class, 'showData']);
+Route :: post('edit',[deleteMemberController::class, 'update']);
