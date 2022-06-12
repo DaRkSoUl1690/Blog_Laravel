@@ -9,6 +9,7 @@ use App\Http\Controllers\listController;
 use App\Http\Controllers\reqController;
 use App\Http\Controllers\sessController;
 use App\Http\Controllers\storeController;
+use App\Http\Controllers\memberController;
 
 
 /*
@@ -93,4 +94,7 @@ Route::get('/', function () {
 // Route::get('dbs' , [dbController::class, 'index']);
 
 
-Route :: get('list',[listController::class, 'list']);
+// Route :: get('list',[listController::class, 'list']);
+
+// Route::view('add','addMembers');
+// Route :: post('addData',[memberController::class, 'addData']);
