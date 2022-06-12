@@ -10,7 +10,7 @@ use App\Http\Controllers\reqController;
 use App\Http\Controllers\sessController;
 use App\Http\Controllers\storeController;
 use App\Http\Controllers\memberController;
-
+use App\Http\Controllers\deleteMemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,3 +98,6 @@ Route::get('/', function () {
 
 // Route::view('add','addMembers');
 // Route :: post('addData',[memberController::class, 'addData']);
+
+Route :: get('list',[deleteMemberController::class, 'list']);
+Route :: get('delete/{id}',[deleteMemberController::class, 'delete']);
