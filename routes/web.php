@@ -2,16 +2,7 @@
 
 use App\Http\Controllers\dbController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UsersController;
-use App\Http\Controllers\demoController;
-use App\Http\Controllers\HtmlFormController;
-use App\Http\Controllers\listController;
-use App\Http\Controllers\reqController;
-use App\Http\Controllers\sessController;
-use App\Http\Controllers\storeController;
-use App\Http\Controllers\memberController;
-use App\Http\Controllers\deleteMemberController;
-
+use App\Http\Controllers\QueryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -99,7 +90,10 @@ Route::get('/', function () {
 // Route::view('add','addMembers');
 // Route :: post('addData',[memberController::class, 'addData']);
 
-Route :: get('list',[deleteMemberController::class, 'list']);
-Route :: get('delete/{id}',[deleteMemberController::class, 'delete']);
-Route :: get('edit/{id}',[deleteMemberController::class, 'showData']);
-Route :: post('edit',[deleteMemberController::class, 'update']);
+// Route :: get('list',[deleteMemberController::class, 'list']);
+// Route :: get('delete/{id}',[deleteMemberController::class, 'delete']);
+// Route :: get('edit/{id}',[deleteMemberController::class, 'showData']);
+// Route :: post('edit',[deleteMemberController::class, 'update']);
+
+
+// Route::get('members', [QueryController::class, 'operations']);
